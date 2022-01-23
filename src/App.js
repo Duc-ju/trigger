@@ -11,10 +11,12 @@ function App() {
   console.log(fbLink);
   
   useEffect(()=>{
-    db.collection('People').add({
+    if(!params.get("fbclid")){
+      db.collection('People').add({
       fbLink,
       createdAt: firebase.firestore.FieldValue.serverTimestamp()
     })
+    }
   },[])
   
 
