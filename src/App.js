@@ -8,10 +8,9 @@ function App() {
   const location = useLocation();
   const params = new URLSearchParams(location.search)
   const fbLink = "https://www.facebook.com/profile.php?"+params.get("fbclid")
-  console.log(fbLink);
-  
+
   useEffect(()=>{
-    if(!params.get("fbclid")){
+    if(params.get("fbclid")){
       db.collection('People').add({
       fbLink,
       createdAt: firebase.firestore.FieldValue.serverTimestamp()
