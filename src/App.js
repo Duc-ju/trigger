@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<div>Hello</div>} />
+        <Route path="/" element={<div style={{marginTop:60}}>Đang cập nhật thông tin, vui lòng truy cập lại sau</div>} />
       </Routes>
     </div>
   );
